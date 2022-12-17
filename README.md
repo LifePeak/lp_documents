@@ -1,92 +1,119 @@
-# lp_documents
+<div align="center">
+
+# ESX Documents
+
+<img src="https://i.ibb.co/HtCtSgx/esx-documents.png" width="100%">
+
+[![npm version](https://img.shields.io/github/release/apoiat/lp_documents.svg?style=flat)](https://github.com/apoiat/ESX_Deliveries "View this project on npm")  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+____
+
+</div>
 
 
+## Introduction
+Introducing Documents, a great roleplaying addition script for fivem servers using the esx framework. <b>This script provides creation, signing, copying and displaying of documents to enrich players' roleplaying experience</b>. Basically you have two type of documents:
+* Public documents
 
-## Getting started
+  * Affirmation form
+  * Witness testimony
+  * Vehicle convey statement
+  * Debt statement towards citizen
+  * Debt clearance decleration
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+  These are accessible by everyone and are mostly documents required by services or other jobs to be filled and signed by you for some purpose.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+* Job specific documents
 
-## Add your files
+  * [police] Special parking permit
+  * [police] Gun permit
+  * [police] Clean citizen criminal record
+  * [ambulance] Medical report - pathology
+  * [ambulance] Medical report - psychology
+  * [ambulance] Medical report - eye specialist
+  * [ambulance] Marijuana use permit
+  * [avocat - lawyer] Legal services contract
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+  These are documents available only to assigned jobs and consist of documents that need to be filled and signed by people working that specific job. Examples are licenses, reports, permits
 
+## Features
+The following document functions are available
+* Create
+* Sign
+* Show
+* Give Copy
+* Delete
+* Public documents
+* Job specific documents
+* Custom documents creation
+* Localization (gr/en/br/de)
+
+## Requirements
+* ESX framework
+
+## Download & Installation
+> <b>Important note:</b>
+Make sure your resource folder name is lp_documents. Anything else will make the script malfunction.
+
+### Using Git
 ```
-cd existing_repo
-git remote add origin https://gitlab.lifepeak.de/lifepeak-freescripts/lp_documents.git
-git branch -M main
-git push -uf origin main
+cd resources
+git clone https://github.com/apoiat/lp_documents [esx]/lp_documents
 ```
 
-## Integrate with your tools
+### Manually
+Download https://github.com/apoiat/lp_documents/archive/master.zip
 
-- [ ] [Set up project integrations](https://gitlab.lifepeak.de/lifepeak-freescripts/lp_documents/-/settings/integrations)
+Rename folder to lp_documents
 
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Put it in the `[esx]` directory
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Import `lp_documents.sql` in your database
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Add this in your server.cfg :
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```
+start lp_documents
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## How to use
+Unless specified otherwise (in the config file) the hotkey assigned for the documents menu is "L". Releasing it will open up the main menu. From there you can chose to access publicly available documents, job-specific documents or your saved documents. The menu is pretty straightforward. This script comes with some common premade forms for you but if you want to create your own check out the following section.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## How to create your own document.
+Each document is assigned to a specific category. This category can be <b>public</b> for everyone or a <b>job name</b> to be accessible only by citizens in that specific job.
+Each document consists of a <b>headerTitle</b>, <b>headerSubtitle</b> and <b>elements</b>.
+headerTitle and headerSubtitle are self explanatory.
+Elements are the fields which a user fills in, in a document.
+An element, so far, can either be <b>input</b> or <b>textarea</b>.
+Each element has the following properties:
+* <b>can_be_empty</b> : true/false which means a user can submit the form without filling that specific element
+* <b>can_be_edited</b> : true/false which means a user can edit this element's content. Usefull for documents with static values.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+So let's see an example. Let's say we want to create a witness testimony document. This can be filled by anyone so we put it in the public section. Also we want the citizen to fill in the date of occurence and his testimony. Hence we have:
+<table>
+<tr>
+ <td width="30%"><img src="https://i.ibb.co/kx5G0vy/Untitled.png" width="100%"></td>
+ <td width="70%">
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+  ```
+-- We add our document to the public section
+-- Click the image on the left to see the code translation
+["public] ={
+        {
+          headerTitle = "WITNESS TESTIMONY",
+          headerSubtitle = "Official witness testimony.",
+          elements = {
+            { label = "DATE", type = "input", value = "", can_be_emtpy = false },
+            { label = "TESTIMONY", type = "textarea", value = "", can_be_emtpy = false },
+          }
+        },
+        ....
+}
+```
+ </td>
+</tr>
+</table>
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Translations and implementation by [ESX-Brasil]('https://github.com/ESX-Brasil/')
 
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Special thanks to fivem user Max_Muller for providing a German translation.
