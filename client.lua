@@ -18,7 +18,9 @@ local MENU_OPTIONS = {
     color_g = 128,
     color_b = 255,
 }
+
 -- reqired for lp_truckerjob
+
 function getDocumentsOpemMenuKey()
     return Config.MenuKeyStr
 end
@@ -52,8 +54,10 @@ end)
 
 local waitingdoc = 0
 
+
 Citizen.CreateThread(function()
-	
+    --[[
+
 		  exports['qtarget']:AddBoxZone("ambulance:documents", vector3(326.8813, -594.3829, 30.2020), 2.0, 2.0, {
 		  name="ambulance:documents",
 		  heading=101.8724,
@@ -122,6 +126,8 @@ Citizen.CreateThread(function()
                     distance = 2.5
                  
                 })
+
+            --]]
            
        
 		 

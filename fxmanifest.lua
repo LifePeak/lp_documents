@@ -1,10 +1,11 @@
-fx_version 'cerulean '
+fx_version 'cerulean'
 game 'gta5'
 
 ui_page 'html/form.html'
 
 shared_script '@es_extended/imports.lua'
 
+name 'lp_documents'
 files {
 	'html/form.html',
 	'html/img/seal.png',
@@ -44,8 +45,8 @@ client_scripts {
 	'GUI.lua',
 	'client.lua',
 }
-client_script "api-ac_gnfLfJsaHvas.lua"
 
-client_export {
-	"getDocumentsOpemMenuKey"
-} 
+exports {"getDocumentsOpemMenuKey"}
+
+
+server_exports {"getDocumentsOpemMenuKey"}

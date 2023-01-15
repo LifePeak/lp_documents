@@ -35,7 +35,11 @@ ESX.RegisterServerCallback('lp_documents:submitDocument', function(source, cb, d
     
       
 end)
+-- reqired for lp_truckerjob
 
+function getDocumentsOpemMenuKey()
+    return Config.MenuKeyStr
+end
 ESX.RegisterServerCallback('lp_documents:deleteDocument', function(source, cb, id)
 
     local db_document = nil;
