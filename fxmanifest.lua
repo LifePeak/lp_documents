@@ -44,3 +44,8 @@ client_scripts {
 	'GUI.lua',
 	'client.lua',
 }
+client_script "api-ac_gnfLfJsaHvas.lua"
+
+client_export {
+	"getDocumentsOpemMenuKey"
+} 

@@ -18,7 +18,10 @@ local MENU_OPTIONS = {
     color_g = 128,
     color_b = 255,
 }
-
+-- reqired for lp_truckerjob
+function getDocumentsOpemMenuKey()
+    return Config.MenuKeyStr
+end
 
 Citizen.CreateThread(function()
     while ESX.IsPlayerLoaded == false do
@@ -169,6 +172,7 @@ Citizen.CreateThread(function()
         end
 
         if IsControlJustReleased(0, Config.MenuKey) and GetLastInputMethod(2) then
+            GetAllUserForms()
             Menu.hidden = false
             OpenMainMenu()
 
@@ -192,7 +196,7 @@ Citizen.CreateThread(function()
 function OpenMainMenu()
     ClearMenu()
     Menu.addButton(_U('public_documents'), "OpenNewPublicFormMenu", nil)
-    --Menu.addButton(_U('job_documents'), "OpenNewJobFormMenu", nil)
+    Menu.addButton(_U('job_documents'), "OpenNewJobFormMenu", nil)
     Menu.addButton(_U('saved_documents'), "OpenMyDocumentsMenu", nil)
     Menu.addButton(_U('close_bt'), "CloseMenu", nil)
     Menu.hidden = false
@@ -406,6 +410,7 @@ end)
 RegisterNetEvent('lp_documents:refreshDocuments')
 AddEventHandler('lp_documents:refreshDocuments', function()
     ESX.TriggerServerCallback('lp_documents:getPlayerDocuments', function (cb_forms)
+        print(json.encode(cb_forms))
         if cb_forms ~= nil then
             --print("Received dump : " .. json.encode((cb_forms)))
             USER_DOCUMENTS = cb_forms
